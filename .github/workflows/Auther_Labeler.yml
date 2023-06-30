@@ -25,3 +25,13 @@ jobs:
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: community contribution
+
+  debug_Issue_labeler:
+    name: Auto Issue Community Labeler
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'issues' }}
+    steps:
+      - name: Add Contributor Label
+        run: |
+          author_type = $((github.event.issue.author_association))
+          echo "::debug::$author_type"
