@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.author_association != 'MEMBER' && github.event.pull_request.author_association != 'OWNER' }}
     steps:
-      - name: Add Contributer Label
+      - name: Add Contributor Label
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: community contribution
@@ -21,7 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'issues' && github.event.issue.author_association != 'MEMBER' && github.event.issue.author_association != 'OWNER' }}
     steps:
-      - name: Add Contributer Label
+      - name: Add Contributor Label
+        run: |
+          author_type = $((github.event.issue.author_association))
+          echo "::debug::$author_type"
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: community contribution
