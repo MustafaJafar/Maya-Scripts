@@ -27,7 +27,7 @@ jobs:
           labels: community contribution
 
   debug_Issue_labeler:
-    name: Auto Issue Community Labeler
+    name: Debug Issue Community Labeler
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'issues' }}
     steps:
