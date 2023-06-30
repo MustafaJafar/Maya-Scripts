@@ -1,5 +1,5 @@
 
-name: Auto Community Labeler
+name: Auther Labeler
 
 on:
   pull_request:
