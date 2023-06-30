@@ -1,5 +1,5 @@
 
-name: Auther Labeler
+name: Debug Labeler
 
 on:
   pull_request:
